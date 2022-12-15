@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Light-FD.woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("../fonts/Vazir-Regular-FD.woff");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("../fonts/Vazir-Bold-FD.woff");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("../fonts/Vazir-Medium-FD.woff");
+    font-weight: 500;
+    font-display: swap;
+}

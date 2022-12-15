@@ -1,0 +1,13 @@
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    font-size: large;
+}
+.cardImg {
+    height: 240px;
+    max-width: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
