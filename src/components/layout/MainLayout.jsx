@@ -2,11 +2,10 @@ import { Badge, Button, Drawer, Layout } from "antd";
 import MainNav from "../nav/MainNav";
 import { ConfigProvider } from 'antd';
 import { ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from './main-layout.module.css'
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { cartActions } from './../../store/entities/cart/cartSlice';
 
 const MainLayout = ({ children }) => {
 
@@ -15,7 +14,6 @@ const MainLayout = ({ children }) => {
     const [open, setOpen] = useState(false);
 
     const total = useSelector(state => state.cart.total);
-    const dispatch = useDispatch();
 
     const showDrawer = () => {
         setOpen(true);
@@ -24,14 +22,6 @@ const MainLayout = ({ children }) => {
     const onClose = () => {
         setOpen(false);
     };
-
-    useEffect(() => {
-        const cart = JSON.parse(localStorage.getItem("cart"));
-        if (cart) {
-            dispatch(cartActions.setCart(cart));
-        }
-
-    }, [dispatch])
 
     return (
         <ConfigProvider direction="rtl">

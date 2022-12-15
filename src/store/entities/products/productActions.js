@@ -1,9 +1,14 @@
 // import axios from "axios"
 import { productActions } from './productSlice';
-import {PRODUCTS} from '../../../helper/products';
+import { PRODUCTS } from '../../../helper/products';
+import { cartActions } from './../cart/cartSlice';
 
 export const getAllProducts = () => async (dispatch, getState) => {
 
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart) {
+        dispatch(cartActions.setCart(cart));
+    }
     const cartItems = getState().cart.items;
 
     // try {
